@@ -1,0 +1,29 @@
+<!-- templates/mytodo/delete_task.html -->
+
+{% extends "base.html" %}
+
+{% block title %}
+-Delete Task-
+{% endblock title %}
+
+{% block contents %}
+<div class="add delete">
+    <h1>タスク削除</h1>
+
+    <h3>以下のタスクを削除します。よろしいですか？</h3>
+
+    <form action="{% url 'delete_task' task.id %}" method="post">
+        {% csrf_token %}
+        <div class="task-header">
+            <span class="task-title">{{ task.title }}</span>
+            <span class="task-date">
+                {{ task.start_date|date:"Y年m月d日 H:i"}} - {{ task.end_date|date:"Y年m月d日 H:i"}}
+            </span>
+        </div>
+        <p class="task-description">{{ task.description }}</p>
+
+        <button type="submit" class="delete_btn">削除</button>
+        <a href="{% url 'index' %}" class="cancel_btn">戻る</a>
+    </form>
+</div>
+{% endblock contents %}

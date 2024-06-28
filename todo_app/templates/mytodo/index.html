@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+-Top-
+{% endblock title %}
+
+{% block contents %}
+<div class="index">
+
+    <h1>Todoリスト</h1>
+    <a class="add_btn" href="{% url "add" %}">タスクを追加</a>
+
+    <div class="margin">
+        <br><br><br>
+    </div>
+    <ul>
+        {% for task in todo_list %}
+        <li class="{% if task.complete %}complete{% endif %}">
+            <form action="{% url "update_task_complete" %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="task_id" value="{{ task.id }}">
+                <input type="checkbox" name="complete" onchange="this.form.submit()" {% if task.complete %}checked{% endif %}>
+                <div class="task-header">
+                    <span class="task-title">{{ task.title }}</span>
+                    <span class="task-date">
+                        {{ task.start_date|date:"Y年m月d日 H:i"}} - {{ task.end_date|date:"Y年m月d日 H:i"}}
+                    </span>
+                </div>
+                <p class="task-description">{{ task.description }}</p>
+            </form>
+            <div class="btn">
+                <a class="edit_btn" href="{% url 'edit_task' task.id %}">編集</a>
+                <a class="delete_btn" href="{% url 'delete_task' task.id %}">削除</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <br>
+    <br>
+    {% if completed_tasks %}
+    <div class="completed-tasks">
+        <h2>完了したタスク</h2>
+        <ul>
+            {% for task in completed_tasks %}
+            <li class="{% if task.complete %}complete{% endif %}">
+                <form action="{% url "update_task_complete" %}" method="post">
+                    {% csrf_token %}
+                    <div class="task_th">
+                        <input type="hidden" name="task_id" value="{{ task.id }}">
+                        <input type="checkbox" name="complete" onchange="this.form.submit()" {% if task.complete %}checked{% endif %}>
+                        <div class="task-header">
+                            <span class="task-title">{{ task.title }}</span>
+                            <span class="task-date">
+                                {{ task.start_date|date:"Y年m月d日 H:i"}} - {{ task.end_date|date:"Y年m月d日 H:i"}}
+                            </span>
+                        </div>
+                        <p class="task-description">{{ task.description }}</p>
+                    </div>
+                </form>
+                <div class="btn">
+                    <a class="edit_btn" href="{% url 'edit_task' task.id %}">編集</a>
+                    <a class="delete_btn" href="{% url 'delete_task' task.id %}">削除</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+{% endblock contents %}

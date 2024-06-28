@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* height: 100vh; */
+    padding: 50px 250px;
+    background-color: beige;
+    color: darkgoldenrod;
+}
+
+li {
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.add_btn{
+    float: right;
+    margin-top: 10px; /* 適切な余白を設定 */
+    margin-right: 20px; /* 適切な余白を設定 */
+}
+
+.index a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: royalblue;
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.index a:hover {
+    background-color: rgb(50, 80, 170);
+}
+
+.index ul {
+    list-style-type: none;
+}
+
+.index li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.2);
+}
+
+.index .task_th {
+    text-decoration: line-through;
+    color: tan;
+}
+
+.index .edit_btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: lightslategray;
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.index .edit_btn:hover{
+    background-color: rgb(97, 116, 136);
+}
+
+
+.index .delete_btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: rgb(206, 32, 32);
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.index .delete_btn:hover{
+    background-color: rgb(171, 25, 25);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.task-date {
+    font-size: 14px;
+    color: tan;
+}
+
+.task-description {
+    font-size: 16px;
+}
+
+.add form {
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.2);
+}
+
+.add form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.add form input,
+.add form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid darkgoldenrod;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: none;
+}
+
+.add form button {
+    background-color: royalblue;
+    color: azure;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add form button:hover {
+    background-color: rgb(50, 80, 170);
+}
+
+.add .field-error {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.add button{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: lightslategray;
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.delete h3{
+    margin-bottom: 15px;
+}
+
+.delete .delete_btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: rgb(206, 32, 32);
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.delete .delete_btn:hover{
+    background-color: rgb(171, 25, 25);
+}
+
+.delete .cancel_btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 2.5px 10px;
+    background-color: lightslategray;
+    color: azure;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.delete .cancel_btn:hover{
+    background-color: rgb(97, 116, 136);
+}
+
+
+.btn{
+    text-align: right; 
+    margin-top: 10px; 
+    margin-bottom: 20px;
+}
+
+.comp_btn{
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+.index ul{
+    list-style: none;
+}
